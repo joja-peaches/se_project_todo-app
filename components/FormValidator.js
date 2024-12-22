@@ -88,6 +88,7 @@ class FormValidator {
     resetValidation() {
       this._formEl.addEventListener("submit", (evt) => {
         this._formEl.querySelector(this._inputSelector).value = "";
+        this._toggleButtonState(this._inputList, this._buttonElement);
       });
     }
 }
