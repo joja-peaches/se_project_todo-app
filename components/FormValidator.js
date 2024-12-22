@@ -31,10 +31,8 @@ _checkInputValidity(inputElement) {
       inputElement,
       inputElement.validationMessage
     );
-  console.log("not valid")
   } else {
     this._hideInputError(this._formEl, inputElement);
-  console.log("valid")
   }
 };
 
