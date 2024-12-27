@@ -6,7 +6,7 @@ class FormValidator {
         this._inputErrorClass = settings.inputErrorClass;
         this._inactiveButtonClass = settings.inactiveButtonClass;
         this._formEl = formEl;
-    }
+    };
 
     _showInputError(formElement, inputElement, errorMessage) {
       const errorElementId = `#${inputElement.id}-error`;
@@ -68,29 +68,22 @@ class FormValidator {
               this._toggleButtonState(this._inputList, this._buttonElement);
             });
           });
-      console.log(this._buttonElement);
+    }
+
+    resetValidation() {
+      this._formEl.addEventListener("submit", (evt) => {
+        this._formEl.reset();
+        this._toggleButtonState(this._inputList, this._buttonElement);
+      });
     }
 
     enableValidation() {
         this._formEl.addEventListener("submit", (evt) => {
-            evt.preventDefault();
+          evt.preventDefault();
           });
         this._setEventListeners();
+        this.resetValidation();
       }
-
-
-      // It should reset the form’s inputs.
-      // It should disable the submit button.
-      // This method should then be called in index.js, 
-      // but only after the form is successfully submitted. 
-
-
-    resetValidation() {
-      this._formEl.addEventListener("submit", (evt) => {
-        this._formEl.querySelector(this._inputSelector).value = "";
-        this._toggleButtonState(this._inputList, this._buttonElement);
-      });
-    }
 }
 
 export default FormValidator;
