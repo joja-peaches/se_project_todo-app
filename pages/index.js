@@ -1,4 +1,4 @@
-// import { v4 as uuidv4 } from 'https://jspm.dev/uuid';
+import { v4 as uuidv4 } from 'https://jspm.dev/uuid';
 import { initialTodos, validationConfig } from "../utils/constants.js";
 import Todo from "../components/Todo.js";
 import FormValidator from '../components/FormValidator.js';
@@ -15,6 +15,7 @@ const todoCounter = new TodoCounter(initialTodos, ".counter__text");
 const addToDoPopup = new PopupWithForm({ 
   popupSelector: "#add-todo-popup", 
   handleFormSubmit: (inputValues) => {
+    inputValues.id = uuidv4();
     renderTodo(inputValues);
     handleTotal(true);
     addToDoPopup.close();
