@@ -30,11 +30,9 @@ A clean, responsive, and modular JavaScript ToDo app that helps you manage tasks
 
 ## 📸 Screenshots
 
-> _(Add yours here – drop PNGs or use hosted images with `![alt](url)`)_
-
-<!-- Example:
-![App Screenshot](./assets/screenshot.png)
--->
+<p align="center">
+  <img src="https://iili.io/FDls367.jpg" alt="To Do App Screenshot" width="600" />
+</p>
 
 ---
 
